@@ -212,13 +212,16 @@
       flex: 0 0 100%;
       position: relative;
     }
-    .slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-height: 550px;
-      object-fit: cover;
-    }
+    /* استبدل الجزء الخاص بـ .slide img في القسم المخصص للسلايدر */
+	.slide img {
+		width: 100%;
+		height: auto;           /* الارتفاع تلقائي حسب النسبة */
+		max-height: 550px;      /* يمكنك تحديد أقصى ارتفاع مناسب */
+		object-fit: contain;    /* يجعل الصورة تظهر كاملة بدون قص */
+		background-color: #f0f2f5; /* خلفية لطيفة عندما تكون الصورة أصغر من الحاوية */
+		display: block;
+		margin: 0 auto;
+	}
     .slide-caption {
       position: absolute;
       bottom: 0;
@@ -1047,10 +1050,15 @@
   let autoInterval;
   const autoDelay = 5500;
 
-  function updateSlider() {
-    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-    updateDots();
-  }
+  // بدلاً من الدالة updateSlider القديمة، استخدم هذه:
+	function updateSlider() {
+		const direction = document.documentElement.dir === 'rtl' ? 1 : -1;
+		// في RTL: نضرب currentIndex بـ +100% (أي نحرك الحاوية إلى اليمين)
+		// في LTR: نضرب بـ -100% (نحرك الحاوية إلى اليسار)
+		const translateValue = direction * currentIndex * 100;
+		wrapper.style.transform = `translateX(${translateValue}%)`;
+		updateDots();
+	}
 
   function updateDots() {
     const dots = document.querySelectorAll('.dot');
