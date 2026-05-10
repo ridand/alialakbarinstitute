@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=yes" />
+  <meta name="theme-color" content="#0B1F3B" />
+  <title>معهد علي الاكبر المهني و التقني  | Ali Alakbar Institute</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --navy:#0B1F3B;
+      --navy2:#071A2F;
+      --gold:#C8A24A;
+      --white:#FFFFFF;
+      --ink:#0d1420;
+      --muted:#6b7280;
+      --bg:#F5F7FA;
+      --card:rgba(255,255,255,.86);
+      --line:rgba(200,162,74,.35);
+      --shadow: 0 18px 50px rgba(11,31,59,.18);
+      --radius: 18px;
+      --max: 1120px;
+      --font-ar: "IBM Plex Sans Arabic","Cairo","Noto Kufi Arabic","Tahoma","Arial",sans-serif;
+      --font-en: "IBM Plex Sans","Montserrat","Noto Sans","Segoe UI","Arial",sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 380px at 20% 0%, rgba(200,162,74,.14), transparent 60%),
+        radial-gradient(900px 380px at 90% 10%, rgba(11,31,59,.14), transparent 55%),
+        linear-gradient(180deg, #ffffff, var(--bg));
+      font-family: var(--font-ar);
+      overflow-x: hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:15px 12px 60px; width:100%}
+
+    @media (max-width: 768px) {
+      .container{padding:10px 10px 40px}
+      body{font-size: 15px}
+    }
+
+    @media (max-width: 480px) {
+      .container{padding:8px 8px 30px}
+      body{font-size: 14px}
+    }
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.85);
+      border-bottom: 1px solid rgba(11,31,59,.08);
+    }
+
+    .topbar .inner{
+      max-width:var(--max); margin:0 auto; padding:12px 15px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .topbar .inner{
+        padding:10px 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .brand, .lang {
+        min-width: auto;
+        width: 100%;
+        justify-content: center;
+      }
+      .brand {
+        order: 1;
+        justify-content: flex-start;
+      }
+      .nav {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+      }
+      .lang {
+        order: 3;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topbar .inner{
+        padding:8px 10px;
+      }
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 260px;
+    }
+    .brand img{
+      width:40px;height:40px;object-fit:contain;
+      filter: drop-shadow(0 6px 18px rgba(11,31,59,.25));
+    }
+    .brand .t1{
+      font-weight:900;
+      color:var(--navy);
+      line-height:1.2;
+      font-size:14px;
+    }
+    .brand .t2{
+      font-size:12px; color:var(--muted); margin-top:2px;
+      font-family: var(--font-en);
+      direction:ltr;
+    }
+
+    @media (max-width: 768px) {
+      .brand img{width:36px;height:36px}
+      .brand .t1{font-size:13px}
+      .brand .t2{font-size:11px}
+    }
+
+    .nav{
+      display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+      justify-content:center;
+    }
+    .nav a{
+      padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(11,31,59,.10);
+      background: rgba(255,255,255,.55);
+      font-size:13px;
+      font-weight:800;
+      white-space: nowrap;
+    }
+    .nav a:hover{
+      border-color: rgba(200,162,74,.55);
+      box-shadow:0 8px 22px rgba(11,31,59,.08)
+    }
+
+    @media (max-width: 768px) {
+      .nav{gap:6px}
+      .nav a{
+        padding:6px 8px;
+        font-size:12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav{
+        justify-content: space-around;
+        width: 100%;
+      }
+      .nav a{
+        padding:6px 8px;
+        font-size:11px;
+        flex: 1;
+        text-align: center;
+        min-width: 80px;
+      }
+    }
+
+    .lang{
+      display:flex; align-items:center; gap:10px;
+      justify-content:flex-end;
+      min-width: 260px;
+    }
+    .toggle{
+      display:flex; padding:4px; border-radius:999px;
+      border:1px solid rgba(11,31,59,.12);
+      background: rgba(255,255,255,.60);
+      box-shadow: 0 10px 30px rgba(11,31,59,.08);
+    }
+    .toggle button{
+      border:0; background:transparent; cursor:pointer;
+      padding:8px 12px; border-radius:999px;
+      font-weight:900;
+      color:var(--navy);
+      font-family: var(--font-en);
+      letter-spacing:.3px;
+      font-size: 14px;
+    }
+    .toggle button.active{
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color:var(--white);
+      box-shadow: 0 12px 26px rgba(11,31,59,.22);
+    }
+
+    @media (max-width: 768px) {
+      .toggle button{padding:6px 10px; font-size:13px}
+    }
+
+    /* ========== HERO SLIDER - FULLY RESPONSIVE (ONLY FIX) ========== */
+    .hero-slider {
+      width: 100%;
+      margin: 20px 0 30px;
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .slide {
+      flex: 0 0 100%;
+      position: relative;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 550px;
+      object-fit: cover;
+    }
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      padding: 20px 24px;
+      text-align: right;
+    }
+    .slide-caption h3 {
+      font-size: 1.5rem;
+      margin: 0 0 8px;
+      font-weight: 900;
+    }
+    .slide-caption p {
+      font-size: 1rem;
+      margin: 0;
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(4px);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--navy);
+      z-index: 10;
+      transition: 0.2s;
+    }
+    .slider-btn:hover {
+      background: var(--gold);
+      color: white;
+    }
+    .btn-prev { left: 15px; }
+    .btn-next { right: 15px; }
+    .slider-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 10;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.2s;
+      border: none;
+      padding: 0;
+    }
+    .dot.active {
+      background: var(--gold);
+      transform: scale(1.2);
+    }
+    /* تحسينات responsiveness للسلايدر */
+    @media (max-width: 992px) {
+      .slide img { max-height: 460px; }
+      .slide-caption h3 { font-size: 1.3rem; }
+      .slide-caption p { font-size: 0.9rem; }
+    }
+    @media (max-width: 768px) {
+      .hero-slider { margin: 15px 0 20px; }
+      .slide img { max-height: 340px; }
+      .slide-caption { padding: 12px 16px; }
+      .slide-caption h3 { font-size: 1.2rem; }
+      .slider-btn { width: 36px; height: 36px; font-size: 18px; }
+      .btn-prev { left: 8px; }
+      .btn-next { right: 8px; }
+      .dot { width: 8px; height: 8px; }
+    }
+    @media (max-width: 480px) {
+      .slide img { max-height: 240px; }
+      .slide-caption h3 { font-size: 1rem; }
+      .slide-caption p { font-size: 0.75rem; }
+      .slider-btn { width: 30px; height: 30px; font-size: 14px; }
+    }
+
+    /* باقي الأنماط كما هي دون تغيير (للحفاظ على البطاقات الأصلية) */
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(11,31,59,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(135deg, rgba(200,162,74,.14), transparent 55%),
+        repeating-linear-gradient(45deg, rgba(11,31,59,.06) 0 1px, transparent 1px 18px);
+      opacity:.22;
+      pointer-events:none;
+    }
+    .card .pad{position:relative; padding:22px}
+
+    @media (max-width: 768px) {
+      .card .pad{padding:18px}
+      .card{border-radius: 16px}
+    }
+
+    @media (max-width: 480px) {
+      .card .pad{padding:15px}
+      .card{border-radius: 14px}
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      font-weight:900; color:var(--navy);
+      font-size:12px;
+    }
+    .kicker .dot{width:6px;height:6px;border-radius:99px;background:var(--gold)}
+
+    h1{
+      margin:12px 0 6px;
+      font-size: 28px;
+      line-height:1.3;
+      color: var(--navy);
+      letter-spacing:.1px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 768px) {
+      h1{font-size: 24px; margin:10px 0 5px}
+      .kicker{font-size:11px; padding:5px 8px}
+    }
+
+    @media (max-width: 480px) {
+      h1{font-size: 20px}
+      .kicker{font-size:10px}
+    }
+
+    p.lead{
+      margin:0;
+      font-size:15px;
+      color: rgba(13,20,32,.80);
+      line-height:1.7;
+    }
+
+    @media (max-width: 768px) {
+      p.lead{font-size:14px; line-height:1.6}
+    }
+
+    @media (max-width: 480px) {
+      p.lead{font-size:13px; line-height:1.5}
+    }
+
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:15px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid rgba(11,31,59,.12);
+      background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+      font-weight:900;
+      font-size: 14px;
+    }
+    
+    .btn-facebook{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid rgba(11,31,59,.12);
+      color: var(--white);
+      background: linear-gradient(90deg,rgba(9, 9, 117, 1) 0%, rgba(0, 212, 255, 1) 100%);
+      font-weight:900;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 768px) {
+      .btn, .btn-facebook{
+        padding:8px 12px;
+        font-size:13px;
+        border-radius:10px;
+      }
+      .actions{gap:8px; margin-top:12px}
+    }
+
+    @media (max-width: 480px) {
+      .btn, .btn-facebook{
+        padding:7px 10px;
+        font-size:12px;
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+      }
+      .actions{
+        gap:6px;
+        justify-content: center;
+      }
+    }
+    
+    .btn.primary{
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color: var(--white);
+      border-color: rgba(255,255,255,.25);
+    }
+    .btn.gold{
+      background: linear-gradient(90deg,rgba(29, 222, 106, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+      color: #1b1406;
+      border-color: rgba(11,31,59,.10);
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow:0 16px 30px rgba(11,31,59,.12)}
+    .btn:active{transform: translateY(0px); box-shadow:none}
+
+    .affil{
+      display:flex; gap:10px; align-items:center;
+      padding:12px 12px;
+      border-radius: 14px;
+      background: rgba(11,31,59,.06);
+      border:1px solid rgba(11,31,59,.08);
+    }
+    .affil img{width:40px;height:40px;object-fit:contain}
+    .affil b{color:var(--navy); font-size: 14px}
+    .affil div{line-height:1.3}
+    .affil small{display:block;color:var(--muted);margin-top:2px; font-size: 12px}
+
+    .grid{
+      margin-top:15px;
+      display:grid; gap:12px;
+      grid-template-columns: repeat(3,1fr);
+    }
+    
+    @media (max-width: 768px){
+      .grid{grid-template-columns: repeat(2,1fr); gap:10px}
+      .affil{padding:10px; border-radius:12px}
+      .affil img{width:36px;height:36px}
+      .affil b{font-size:13px}
+      .affil small{font-size:11px}
+    }
+
+    @media (max-width: 480px){
+      .grid{grid-template-columns:1fr; gap:8px}
+    }
+
+    .mini{
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(11,31,59,.10);
+      border-radius: 14px;
+      padding:14px;
+      box-shadow: 0 12px 30px rgba(11,31,59,.08);
+      position:relative;
+      overflow:hidden;
+    }
+    .mini::before{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(200,162,74,.35), transparent 40%);
+      opacity:.25; pointer-events:none;
+    }
+    .mini h3{
+      margin:0 0 6px;
+      color:var(--navy);
+      font-size:14px;
+      font-weight: 900;
+    }
+    .mini p{margin:0;color:rgba(13,20,32,.78);line-height:1.6;font-size:13px}
+
+    @media (max-width: 768px) {
+      .mini{padding:12px; border-radius:12px}
+      .mini h3{font-size:13px}
+      .mini p{font-size:12px; line-height:1.5}
+    }
+
+    section{scroll-margin-top:80px}
+    .section{
+      margin-top:20px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(11,31,59,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .section::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        repeating-linear-gradient(45deg, rgba(11,31,59,.06) 0 1px, transparent 1px 22px);
+      opacity:.16;
+      pointer-events:none;
+    }
+    .section .pad{position:relative; padding:20px}
+    .section h2{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-size:20px;
+      font-weight: 900;
+    }
+    .section .sub{color:var(--muted);margin:0 0 15px;line-height:1.6; font-size: 14px}
+
+    @media (max-width: 768px) {
+      .section{margin-top:15px; border-radius:16px}
+      .section .pad{padding:16px}
+      .section h2{font-size:18px}
+      .section .sub{font-size:13px; margin:0 0 12px}
+    }
+
+    @media (max-width: 480px) {
+      .section .pad{padding:14px}
+      .section h2{font-size:16px}
+      .section .sub{font-size:12px}
+    }
+
+    .two{
+      display:grid; gap:14px;
+      grid-template-columns: 1.05fr .95fr;
+      align-items:start;
+    }
+    
+    @media (max-width: 768px){ 
+      .two{grid-template-columns:1fr; gap:12px}
+    }
+
+    .list{
+      display:grid; gap:8px;
+    }
+    .item{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px;
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(11,31,59,.10);
+      border-radius: 14px;
+    }
+    .icon{
+      width:30px;height:30px;border-radius:10px;
+      display:grid; place-items:center;
+      background: rgba(200,162,74,.18);
+      border:1px solid rgba(200,162,74,.35);
+      flex:0 0 auto;
+      font-weight:900;
+      color: var(--navy);
+      font-family: var(--font-en);
+      font-size: 14px;
+    }
+    .item b{display:block;color:var(--navy);margin-bottom:2px;font-weight: 900; font-size: 14px}
+    .item span{color:rgba(13,20,32,.78);line-height:1.6; font-size: 13px}
+    .mono{font-family: var(--font-en); direction:ltr; font-size: 13px}
+
+    @media (max-width: 768px) {
+      .item{padding:10px; border-radius:12px}
+      .icon{width:28px;height:28px; font-size:13px; border-radius:8px}
+      .item b{font-size:13px}
+      .item span{font-size:12px; line-height:1.5}
+      .mono{font-size:12px}
+    }
+
+    .contactbox{
+      background: rgba(11,31,59,.06);
+      border:1px solid rgba(11,31,59,.10);
+      border-radius: 16px;
+      padding:16px;
+    }
+    .contactbox .row{display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.80);
+      border:1px solid rgba(11,31,59,.10);
+      font-weight:900;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .contactbox{padding:14px; border-radius:14px}
+      .contactbox .row{margin-bottom:6px; gap:8px}
+      .pill{padding:7px 9px; font-size:12px; border-radius:20px}
+      .pill i{font-size:18px !important}
+    }
+
+    @media (max-width: 480px) {
+      .contactbox{padding:12px}
+      .pill{padding:6px 8px; font-size:11px}
+      .pill i{font-size:16px !important}
+    }
+
+    .qrwrap{
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.85);
+      border:1px solid rgba(11,31,59,.10);
+      border-radius: 16px;
+      padding:12px;
+      max-width: 260px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .qrwrap img{
+      width:160px;height:160px;border-radius:12px;
+      border:1px solid rgba(11,31,59,.10)
+    }
+    .note{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5;text-align:center}
+
+    @media (max-width: 768px) {
+      .qrwrap{padding:10px; border-radius:14px; max-width: 220px}
+      .qrwrap img{width:140px;height:140px; border-radius:10px}
+      .note{font-size:10px; margin-top:6px}
+    }
+
+    @media (max-width: 480px) {
+      .qrwrap{max-width: 200px}
+      .qrwrap img{width:120px;height:120px}
+    }
+
+    footer{
+      margin-top:15px;
+      color: rgba(13,20,32,.65);
+      text-align:center;
+      font-size:11px;
+      font-family: var(--font-en);
+      direction:ltr;
+    }
+
+    /* Bilingual blocks */
+    .lang-block{display:none}
+    .lang-block.active{display:block}
+    .en{font-family: var(--font-en); direction:ltr; text-align:left}
+    .ar{font-family: var(--font-ar); direction:rtl; text-align:right}
+
+    /* Institutions Grid (تم الحفاظ عليه كما هو) */
+    .inst-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    @media (max-width: 980px){
+      .inst-grid{grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width: 520px){
+      .inst-grid{grid-template-columns: 1fr; gap:10px}
+    }
+
+    .inst-card{
+      background: rgba(255,255,255,.80);
+      border: 1px solid rgba(11,31,59,.10);
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow: 0 12px 30px rgba(11,31,59,.08);
+      position:relative;
+    }
+    .inst-card::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(200,162,74,.22), transparent 45%);
+      opacity:.18;
+      pointer-events:none;
+    }
+
+    .inst-img{
+      height:100px;
+      width:100%;
+      display:block;
+      object-fit:cover;
+      background:
+        linear-gradient(135deg, rgba(11,31,59,.22), rgba(11,31,59,.05)),
+        radial-gradient(220px 120px at 80% 15%, rgba(200,162,74,.22), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.0), rgba(245,247,250,1));
+      border-bottom: 1px solid rgba(11,31,59,.10);
+    }
+
+    @media (max-width: 768px) {
+      .inst-img{height:90px}
+      .inst-card{border-radius:14px}
+    }
+
+    @media (max-width: 480px) {
+      .inst-img{height:80px}
+    }
+
+    .inst-body{
+      padding:10px 10px 12px;
+      position:relative;
+    }
+    .inst-title{
+      margin:0;
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .inst-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:8px;
+      padding:5px 8px;
+      border-radius: 999px;
+      background: rgba(11,31,59,.06);
+      border: 1px solid rgba(11,31,59,.10);
+      color: rgba(13,20,32,.78);
+      font-weight: 900;
+      font-size: 11px;
+      font-family: var(--font-en);
+      direction:ltr;
+    }
+    
+    @media (max-width: 768px) {
+      .inst-body{padding:8px 8px 10px}
+      .inst-title{font-size:12px}
+      .inst-badge{font-size:10px; padding:4px 7px; margin-top:6px}
+    }
+
+    .pill .fa-whatsapp{
+      color: #25D366;
+      font-size: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .pill .fa-whatsapp{font-size: 18px}
+    }
+    
+    @media (max-width: 768px) {
+      html, body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn, .nav a, .toggle button, .pill {
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+        cursor: pointer;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+      section {
+        scroll-margin-top: 60px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .container{padding:6px 6px 25px}
+      h1{font-size: 18px}
+      .section h2{font-size: 15px}
+      .btn, .btn-facebook{min-width: 110px; font-size:11px}
+      .pill{font-size:10px}
+    }
+
+    @media (max-width: 768px) {
+      .side img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">
+        <img src="https://mabarrat.org.lb/wp-content/uploads/2021/12/Al-Mabarrat-Association.png" alt="Logo" />
+        <div>
+          <div class="t1 ar">معهد علي الاكبر المهني و التقني</div>
+          <div class="t2 en">Ali Alakbar Institute</div>
+        </div>
+      </div>
+
+      <nav class="nav">      
+        <a href="#contact" class="ar">تواصل</a>
+      </nav>
+
+      <div class="lang">
+        <div class="toggle">
+          <button id="btn-ar" class="active">AR</button>
+          <button id="btn-en">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+ 
+  <!-- ========== SLIDER SECTION (تم تحسينه فقط ليكون متجاوب) ========== -->
+  <div class="hero-slider">
+    <div class="slider-container">
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slide">
+          <img src="https://i.postimg.cc/jdzR8KCw/Whats-App-Image-2026-05-10-at-2-30-54-PM.jpg" alt="Institute main hall">
+          <div class="slide-caption"><h3>معهد علي الأكبر</h3><p>تميز في التعليم المهني والتقني</p></div>
+        </div>
+        <div class="slide">
+          <img src="https://i.postimg.cc/HkddRK7Y/Whats-App-Image-2026-05-10-at-2-32-43-PM.jpg" alt="Technical workshops">
+          <div class="slide-caption"><h3>تجهيزات حديثة</h3><p>معامل متطورة وورش تدريبية</p></div>
+        </div>
+        <div class="slide">
+          <img src="https://i.postimg.cc/15pyWP4t/55555.jpg" alt="Students success">
+          <div class="slide-caption"><h3>شراكات مع المؤسسات الكبرى</h3><p>فرص تدريب وتوظيف واعدة</p></div>
+        </div>
+        <div class="slide">
+          <img src="https://i.postimg.cc/7ZwwdcTq/Whats-App-Image-2026-55505-10-at-2-32-44-PM.jpg" alt="Institute campus">
+          <div class="slide-caption"><h3>بيئة تعليمية ملهمة</h3><p>رعاية وابتكار وريادة</p></div>
+        </div>
+		<div class="slide">
+          <img src="https://i.postimg.cc/7ZwwdcTx/Whats-App-Image-2026-05-1550-at-2-32-44-PM.jpg" alt="Institute campus">
+          <div class="slide-caption"><h3>بيئة تعليمية ملهمة</h3><p>رعاية وابتكار وريادة</p></div>
+        </div>
+      </div>
+      <button class="slider-btn btn-prev" id="prevSlide"><i class="fas fa-chevron-right"></i></button>
+      <button class="slider-btn btn-next" id="nextSlide"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </div>
+ 
+    <!-- MAP SECTION -->
+    <section id="map" class="section">
+      <div class="pad">
+        <div class="lang-block active ar" id="map-ar">
+          <h2>📍 موقع المؤسسة</h2>
+          <p class="sub">خريطو الوصول إلى معهد علي الاكبر المهني و التقني</p>
+          
+          <div class="map-container" style="margin-top: 20px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.5104479807583!2d35.467166376418384!3d33.7641772365058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ1JzUxLjAiTiAzNcKwMjgnMDEuOCJF!5e0!3m2!1sen!2slb!4v1740612200000!5m2!1sen!2slb" 
+              width="100%" 
+              height="400" 
+              style="border: 1px solid rgba(11,31,59,.15); border-radius: 16px; box-shadow: 0 12px 30px rgba(11,31,59,.1);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+            <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+              <a href="https://maps.app.goo.gl/jVfvmENKxdeAe3Tb6?g_st=aw" 
+                 target="_blank" 
+                 class="btn gold" 
+                 style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-map-marker-alt"></i>
+                فتح في تطبيق الخرائط
+              </a>
+              
+              <a href="https://maps.app.goo.gl/jVfvmENKxdeAe3Tb6?g_st=aw" 
+                 target="_blank" 
+                 class="btn" 
+                 style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-directions"></i>
+                احصل على اتجاهات
+              </a>
+            </div>
+            
+            <div class="contactbox" style="margin-top: 25px;">
+              <h3 style="margin: 0 0 15px; color: var(--navy); font-size: 16px; font-weight: 900;">
+                <i class="fas fa-info-circle" style="color: var(--gold); margin-left: 8px;"></i>
+                معلومات الوصول
+              </h3>
+              
+              <div class="row" style="margin-bottom: 12px;">
+                <span class="pill">
+                  <i class="fas fa-map-pin" style="color: #e74c3c;"></i>
+العنوان: خلدة - دوحة الحص، مفرق الكسارات
+                </span>
+              </div>
+              
+              <div class="row" style="margin-bottom: 12px;">
+                <span class="pill">
+                  <i class="fas fa-coordinates" style="color: var(--navy);"></i>
+                  الإحداثيات: 
+                  <span class="mono" style="margin-right: 5px;">33.733086° N</span>, 
+                  <span class="mono">35.574642° E</span>
+                </span>
+              </div>
+              
+              <div class="row">
+                <span class="pill">
+                  <i class="fas fa-car" style="color: #3498db;"></i>
+                  موقف سيارات: متوفر داخل المجمع
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-block en" id="map-en">
+          <h2>📍 Location</h2>
+          <p class="sub">Access map to Doha Al-Mabarrat Educational & Care Complex in Doha Al-Hoss, Al-Kassarat Junction</p>
+          
+          <div class="map-container" style="margin-top: 20px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.196212200193!2d35.571466776418884!3d33.73308603633348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f1e4b2c4d7a8b%3A0x8d78e64880aac616!2sDoha%20Al-Mabarrat%20Educational%20%26%20Care%20Complex!5e0!3m2!1sen!2slb!4v1738576844816!5m2!1sen!2slb" 
+              width="100%" 
+              height="400" 
+              style="border: 1px solid rgba(11,31,59,.15); border-radius: 16px; box-shadow: 0 12px 30px rgba(11,31,59,.1);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+            <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+              <a href="https://maps.app.goo.gl/jVfvmENKxdeAe3Tb6?g_st=aw" 
+                 target="_blank" 
+                 class="btn gold" 
+                 style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-map-marker-alt"></i>
+                Open in Maps App
+              </a>
+              
+              <a href="https://maps.google.com/?q=33.733086,35.574642" 
+                 target="_blank" 
+                 class="btn" 
+                 style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fas fa-directions"></i>
+                Get Directions
+              </a>
+            </div>
+            
+            <div class="contactbox" style="margin-top: 25px;">
+              <h3 style="margin: 0 0 15px; color: var(--navy); font-size: 16px; font-weight: 900;">
+                <i class="fas fa-info-circle" style="color: var(--gold); margin-left: 8px;"></i>
+                Access Information
+              </h3>
+              
+              <div class="row" style="margin-bottom: 12px;">
+                <span class="pill">
+                  <i class="fas fa-map-pin" style="color: #e74c3c;"></i>
+                  Address: Doha Al-Hoss, Al-Kassarat Junction, West Bekaa
+                </span>
+              </div>
+              
+              <div class="row" style="margin-bottom: 12px;">
+                <span class="pill">
+                  <i class="fas fa-coordinates" style="color: var(--navy);"></i>
+                  Coordinates: 
+                  <span class="mono" style="margin-right: 5px;">33.733086° N</span>, 
+                  <span class="mono">35.574642° E</span>
+                </span>
+              </div>
+              
+              <div class="row">
+                <span class="pill">
+                  <i class="fas fa-car" style="color: #3498db;"></i>
+                  Parking: Available inside the complex
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="pad">
+        <div class="lang-block active ar" id="contact-ar">
+          <h2>تواصل معنا</h2>
+          <p class="sub">للاستفسارات والتواصل، يمكنك استخدام المعلومات التالية أو واتساب عبر الـQR.</p>
+          <div class="two">
+            <div class="contactbox">
+              <div class="row"><span class="pill">📞 الهاتف: <span class="mono">+961 5 801 660</span></span></div>
+              <div class="row"><span class="pill"><i class="fa-brands fa-whatsapp"></i> واتس اب: <span class="mono">+961 3 249 498</span></span></div>		             
+              <div class="row"><span class="pill">✉️ البريد الإلكتروني: <span class="mono">alialakbarinstitute@almabarrat.edu.lb</span></span></div>
+              <div class="row"><span class="pill">🌐 الموقع الإلكتروني: <span class="mono">www.mabarrat.org.lb</span></span></div>
+              <div class="row"><span class="pill">📍 العنوان: دوحة الحص، مفرق الكسارات</span></div>
+			  
+              <div class="actions">
+              <a class="btn primary" href="#contact">تواصل معنا</a>
+              <a class="btn gold" href="http://wa.me/+9613249498" target="_blank" rel="noopener">Whatsapp</a>			  
+              <a class="btn-facebook" href="https://www.facebook.com/alialakbarinstitute" target="_blank" rel="noopener">FaceBook</a>
+			  <a class="btn" href="https://www.instagram.com/alialakbarinstitue" target="_blank" rel="noopener">Instagram</a>
+			  <a class="btn" href="https://mabarrat.org.lb/%D9%85%D8%A4%D8%B3%D8%B3%D8%A7%D8%AA/%D9%85%D8%A4%D8%B3%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85-%D8%A7%D9%84%D9%85%D9%87%D9%86%D9%8A/%D9%85%D8%B9%D9%87%D8%AF-%D8%B9%D9%84%D9%8A-%D8%A7%D9%84%D8%A3%D9%83%D8%A8%D8%B1-%D8%A7%D9%84%D9%85%D9%87%D9%86%D9%8A-%D9%88%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A/" target="_blank" rel="noopener">الموقع الإلكتروني</a>
+            </div>
+            </div>
+			</div>
+
+        <div class="lang-block en" id="contact-en">
+          <h2>Contact</h2>
+          <p class="sub">For inquiries, use the details below or scan the QR to open WhatsApp.</p>
+          <div class="two">
+            <div class="contactbox">
+              <div class="row"><span class="pill">📞 Phone: <span class="mono">+961 5 800 570</span></span></div>
+              <div class="row">
+                <span class="pill">
+                  <i class="fas fa-donate" style="color: #e74c3c;"></i>
+                  WishNo: <span class="mono">+961 71907674</span>
+                </span>
+              </div>
+              <div class="row"><span class="pill">✉️ Email: <span class="mono">alkhouie@mabarrat.org.lb</span></span></div>
+              <div class="row"><span class="pill">🌐 Website: <span class="mono">www.mabarrat.org.lb</span></span></div>
+              <div class="row"><span class="pill">📍 Address: Doha Al-Hoss, Al-Kassarat Junction, Lebanon</span></div>
+              <div class="actions" style="margin-top:12px">
+                <a class="btn primary" href="mailto:alkhouie@mabarrat.org.lb">Email us</a>
+                <a class="btn gold" href="https://wa.me/message/WUKK444PPCVYM1" target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+            </div>
+
+            <div class="qrwrap">
+              <img id="qr2" alt="WhatsApp QR" />
+              <div class="note" id="qr-note2">If the QR doesn't show, you may be offline—replace it with a local QR image.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Doha Al-Mabarrat Educational & Care Complex · All rights reserved
+    </footer>
+  </main>
+
+<script>
+  // ======================== SLIDER MODERN (تم تحسينه ليكون متجاوبًا) =================
+  const wrapper = document.getElementById('sliderWrapper');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.getElementById('prevSlide');
+  const nextBtn = document.getElementById('nextSlide');
+  const dotsContainer = document.getElementById('sliderDots');
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let autoInterval;
+  const autoDelay = 5500;
+
+  function updateSlider() {
+    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, idx) => {
+      if (idx === currentIndex) dot.classList.add('active');
+      else dot.classList.remove('active');
+    });
+  }
+
+  function goToSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+    updateSlider();
+    resetAutoPlay();
+  }
+
+  function nextSlide() { goToSlide(currentIndex + 1); }
+  function prevSlide() { goToSlide(currentIndex - 1); }
+
+  function resetAutoPlay() {
+    if (autoInterval) clearInterval(autoInterval);
+    autoInterval = setInterval(() => { nextSlide(); }, autoDelay);
+  }
+
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      if (i === currentIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+  createDots();
+  updateSlider();
+  resetAutoPlay();
+  prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
+  nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
+  const sliderContainer = document.querySelector('.slider-container');
+  sliderContainer.addEventListener('mouseenter', () => { if (autoInterval) clearInterval(autoInterval); });
+  sliderContainer.addEventListener('mouseleave', () => { resetAutoPlay(); });
+  window.addEventListener('resize', () => { updateSlider(); });
+
+  // touch support
+  let touchStartX = 0;
+  sliderContainer.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+  sliderContainer.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].screenX;
+    const diff = endX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) prevSlide();
+      else nextSlide();
+      resetAutoPlay();
+    }
+  });
+
+  // ============= اللغة والوظائف الأخرى + QR (بدون تغيير) =============
+  const WA_LINK = "https://wa.me/+9613249498";
+  function setQR(imgEl) { if(imgEl) imgEl.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(WA_LINK)}`; }
+  setQR(document.getElementById("qr"));
+  setQR(document.getElementById("qr2"));
+
+  const btnAr = document.getElementById("btn-ar");
+  const btnEn = document.getElementById("btn-en");
+
+  function setLang(lang) {
+    const isAr = lang === "ar";
+    document.documentElement.lang = isAr ? "ar" : "en";
+    document.documentElement.dir = isAr ? "rtl" : "ltr";
+    document.querySelectorAll(".lang-block").forEach(el => el.classList.remove("active"));
+    document.querySelectorAll(isAr ? ".lang-block.ar" : ".lang-block.en").forEach(el => el.classList.add("active"));
+    btnAr.classList.toggle("active", isAr);
+    btnEn.classList.toggle("active", !isAr);
+    document.querySelectorAll(".nav .ar").forEach(el => el.style.display = isAr ? "" : "none");
+    document.querySelectorAll(".nav .en").forEach(el => el.style.display = isAr ? "none" : "");
+  }
+  setLang("ar");
+  btnAr.addEventListener("click", () => setLang("ar"));
+  btnEn.addEventListener("click", () => setLang("en"));
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  document.querySelectorAll('img').forEach(img => img.loading = 'lazy');
+</script>
+</body>
+</html>
